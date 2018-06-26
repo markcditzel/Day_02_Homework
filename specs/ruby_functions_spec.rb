@@ -9,7 +9,7 @@ class FunctionsTest < MiniTest::Test # define a set of test for ruby functions
   end
 
 def test_add()
-    add_result = add( 1, 2 )
+    add_result = add( 1, 2 )# this add function is the link ref to the defined function in the ruby_functions.rb file
     assert_equal( 3, add_result )
   end
 
@@ -56,45 +56,53 @@ def test_add()
     assert_equal( "January", result )
   end
 #
-#   def test_number_to_full_name__month_3()
-#     result = number_to_full_month_name( 3 )
-#     assert_equal( "March", result )
-#   end
+  def test_number_to_full_name__month_3()
+    result = number_to_full_month_name( 3 )
+    assert_equal( "March", result )
+  end
+
+  def test_number_to_full_name__month_9()
+    result = number_to_full_month_name( 9 )
+    assert_equal( "September", result )
+  end
+
+  def test_substring__month_1()
+    first_month_string = number_to_short_month_name( 1 )
+    assert_equal( "Jan", first_month_string )
+  end
 #
-#   def test_number_to_full_name__month_9()
-#     result = number_to_full_month_name( 9 )
-#     assert_equal( "September", result )
-#   end
-#
-#   def test_substring__month_1()
-#     first_month_string = number_to_short_month_name( 1 )
-#     assert_equal( "Jan", first_month_string )
-#   end
-#
-#   def test_substring__month_4()
-#     fourth_month_string = number_to_  short_month_name( 4 )
-#     assert_equal( "Apr", fourth_month_string )
-#   end
-#
-#   def test_substring__month_10()
-#     tenth_month_string = number_to_short_month_name( 10 )
-#     assert_equal( "Oct", tenth_month_string )
-#   end
+  def test_substring__month_4()
+    fourth_month_string = number_to_short_month_name( 4 )
+    assert_equal( "Apr", fourth_month_string )
+  end
+
+  def test_substring__month_10()
+    tenth_month_string = number_to_short_month_name( 10 )
+    assert_equal( "Oct", tenth_month_string )
+  end
 #
 #   #Further
 #
-#   #Given the length of a side of a cube calculate the volume
-#   def test_volume_of_cube()
-#     #add test code here
-#   end
+  #Given the length of a side of a cube calculate the volume
+# length of side = x
+#area of face = x^2
+#volume of cube = x^3
+  def test_volume_of_cube()
+    vol_of_cube = cube_length_to_volume(10)
+    assert_equal(1000, vol_of_cube)
+  end
+
 #
-#   #Given the radius of a sphere calculate the volume
-#   def test_volume_of_sphere()
-#     #add test code here
-#   end
+  #Given the radius of a sphere calculate the volume
+  def test_volume_of_sphere()
+    vol_of_sphere = rad_Pi_calc(6)
+    assert_equal(904.32, vol_of_sphere)
+  end
 #
-#   #Given a value in farenheit, convert this into celsius.
-#   def test_fahrenheit_to_celsius()
-#     #add test code here
-#   end
+  #Given a value in farenheit, convert this into celsius.
+  def test_fahrenheit_to_celsius()
+    f_to_c = fahr_to_cels_convert(100)
+    assert_equal(37.8, f_to_c)
+  end
+
 end

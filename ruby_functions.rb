@@ -38,9 +38,42 @@ def add_string_as_number(x, y)
 end
 
 def number_to_full_month_name(month_number)
-  case month_number
+  case (month_number)
   when 1
     return "January"
+  when 3
+    return "March"
+  when 9
+    return "September"
+  end
+end# all my code disappeared!
 
+def number_to_short_month_name(month_string)
+  mon_str_int = month_string.to_i
+  case (mon_str_int)
+  when 1
+    return "Jan"
+  when 4
+    return "Apr"
+  when 10
+    return "Oct"
   end
 end
+#
+def cube_length_to_volume(side_length)
+  vol_of_cube = side_length**3
+  return vol_of_cube
+end
+
+def rad_Pi_calc(radius)
+  vol_of_sphere = 4.00/3.00 * 3.14 * radius**3#approx value of Pi
+  return vol_of_sphere.round(2)
+end
+
+def fahr_to_cels_convert(fahrenheit_int)
+  cels_value = (fahrenheit_int - 32) * (5.0/9.0)
+  return cels_value.round(1)
+end
+
+
+  #subtract 32 and multiply by .5556 (or 5/9).
